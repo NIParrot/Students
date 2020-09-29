@@ -23,4 +23,22 @@ class absent
             'ErrorMsg'=> $_COOKIE['ErrorMsg']??null
         ];
     }
+
+    public static function PostAdd()
+    {
+        $validate = [
+            'dashboard_user'=>['string','int','email'],
+        ];
+        $RequestData = \NI_request::validate($validate);
+        $dash = \model\absent::create($RequestData);
+        if (!empty($dash)) {
+            
+        } else {
+            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+        }
+    }
+
+    
+
+    
 }

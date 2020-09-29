@@ -6,6 +6,14 @@ class studentExamAnswer {
         $new = \ORM::for_table("studentExamAnswer")->create();
         $new->delete_flag = 0;
         
+            $new->answer = $data["answer"];
+            
+            $new->mark = $data["mark"];
+            
+            $new->examsBank_id = $data["examsBank_id"];
+            
+            $new->students_id = $data["students_id"];
+            
         if ($new->save()) {
             return true;
         }else{

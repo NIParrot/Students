@@ -14,10 +14,14 @@ NI_route::get('/admin/secretary/register', function () {
     NI_Controller::run('admin\secretary@register');
 });
 NI_route::post('/admin/secretary/register', function () {
+    NI_Controller::run('admin\secretary@PostRegister');
+
 });
 
 NI_route::get('/admin/student/register', function () {
     NI_Controller::run('admin\students@register');
 });
 NI_route::post('/admin/student/register', function () {
+    NI_Controller::run('admin\students@PostRegister');
+
 });

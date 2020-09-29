@@ -6,6 +6,20 @@ class examsBank {
         $new = \ORM::for_table("examsBank")->create();
         $new->delete_flag = 0;
         
+            $new->question = $data["question"];
+            
+            $new->c1 = $data["c1"];
+            
+            $new->c2 = $data["c2"];
+            
+            $new->c3 = $data["c3"];
+            
+            $new->c4 = $data["c4"];
+            
+            $new->mark = $data["mark"];
+            
+            $new->levels_id = $data["levels_id"];
+            
         if ($new->save()) {
             return true;
         }else{

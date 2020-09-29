@@ -6,6 +6,12 @@ class absent {
         $new = \ORM::for_table("absent")->create();
         $new->delete_flag = 0;
         
+            $new->absent_date = $data["absent_date"];
+            
+            $new->groups_id = $data["groups_id"];
+            
+            $new->students_id = $data["students_id"];
+            
         if ($new->save()) {
             return true;
         }else{

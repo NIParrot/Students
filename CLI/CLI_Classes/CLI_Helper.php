@@ -99,9 +99,11 @@ class CLI_Helper
         foreach ($t_arr as $key => $value) {
             $temp_arr = [];
             $Col_line_arr = explode(',', $value);
-            foreach ($Col_line_arr as $keyINcol) {
-                $Col_Name = explode(' ', $keyINcol)[4];
-                array_push($temp_arr, $Col_Name);
+            foreach ($Col_line_arr as $keyINcol => $valINcol) {
+                $ColumnName = explode(' ', ltrim(preg_replace('/\s+/', ' ', $valINcol), ' '))[0];
+                if (!empty($ColumnName)) {
+                    array_push($temp_arr, $ColumnName);
+                }
             }
             $database_arr[$key] = $temp_arr;
         }

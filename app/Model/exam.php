@@ -6,6 +6,12 @@ class exam {
         $new = \ORM::for_table("exam")->create();
         $new->delete_flag = 0;
         
+            $new->name = $data["name"];
+            
+            $new->exam_date = $data["exam_date"];
+            
+            $new->TimePerMin = $data["TimePerMin"];
+            
         if ($new->save()) {
             return true;
         }else{

@@ -6,6 +6,12 @@ class groups {
         $new = \ORM::for_table("groups")->create();
         $new->delete_flag = 0;
         
+            $new->name = $data["name"];
+            
+            $new->group_data = $data["group_data"];
+            
+            $new->levels_id = $data["levels_id"];
+            
         if ($new->save()) {
             return true;
         }else{

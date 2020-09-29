@@ -23,4 +23,18 @@ class secretary
             'ErrorMsg'=> $_COOKIE['ErrorMsg']??null
         ];
     }
+
+    public static function PostRegister()
+    {
+        $validate = [
+            'dashboard_user'=>['string','int','email'],
+        ];
+        $RequestData = \NI_request::validate($validate);
+        $dash = \model\admins::create($RequestData);
+        if (!empty($dash)) {
+            
+        } else {
+            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+        }
+    }
 }

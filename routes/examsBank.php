@@ -13,8 +13,14 @@ NI_route::get('/admin/examsBank', function () {
     NI_Controller::run('admin\examBank@index');
 });
 NI_route::post('/admin/examsBank/add', function () {
+    NI_Controller::run('admin\examQuestions@PostAdd');
+
 });
 NI_route::post('/admin/examsBank/edit', function () {
+    NI_Controller::run('admin\examQuestions@PostEdit');
+
 });
 NI_route::post('/admin/examsBank/delete', function () {
+    NI_Controller::run('admin\examQuestions@PostDelete');
+
 });

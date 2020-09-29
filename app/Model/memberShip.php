@@ -6,6 +6,12 @@ class memberShip {
         $new = \ORM::for_table("memberShip")->create();
         $new->delete_flag = 0;
         
+            $new->month = $data["month"];
+            
+            $new->groups_id = $data["groups_id"];
+            
+            $new->students_id = $data["students_id"];
+            
         if ($new->save()) {
             return true;
         }else{

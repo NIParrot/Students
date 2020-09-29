@@ -26,7 +26,7 @@ class students
         ];
     }
 
-    public static function login(): void
+    public static function login()
     {
         //NI_security::unauthorized('login',true,'/dashboard');
         //NI_security::authorized('login',true,'/dashboard/login');

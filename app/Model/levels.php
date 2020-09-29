@@ -6,6 +6,8 @@ class levels {
         $new = \ORM::for_table("levels")->create();
         $new->delete_flag = 0;
         
+            $new->name = $data["name"];
+            
         if ($new->save()) {
             return true;
         }else{

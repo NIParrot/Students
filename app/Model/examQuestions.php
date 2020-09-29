@@ -6,6 +6,12 @@ class examQuestions {
         $new = \ORM::for_table("examQuestions")->create();
         $new->delete_flag = 0;
         
+            $new->exam_id = $data["exam_id"];
+            
+            $new->examsBank_id = $data["examsBank_id"];
+            
+            $new->TimePerMin = $data["TimePerMin"];
+            
         if ($new->save()) {
             return true;
         }else{

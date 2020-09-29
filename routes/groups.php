@@ -14,8 +14,13 @@ NI_route::get('/admin/groups', function () {
     NI_Controller::run('admin\groups@index');
 });
 NI_route::post('/admin/groups/add', function () {
+    NI_Controller::run('admin\groups@PostAdd');
+
 });
 NI_route::post('/admin/groups/edit', function () {
+    NI_Controller::run('admin\groups@PostEdit');
+
 });
 NI_route::post('/admin/groups/delete', function () {
+    NI_Controller::run('admin\groups@PostDelete');
 });
