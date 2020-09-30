@@ -6,8 +6,8 @@ class absent
 {
     public static function index(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        //NI_security::unauthorized('adminkey',true,'/dashboard');
+        // \NI_security::authorized('login',true,'/dashboard/login');
         $path = ['admin','absent','home'];
         $static = [
             'css_arr' => [],
@@ -27,7 +27,9 @@ class absent
     public static function PostAdd()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'absent_date'=>'date',
+            'groups_id'=>'int',
+            'students_id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\absent::create($RequestData);

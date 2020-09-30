@@ -26,7 +26,9 @@ class membership
     public static function PostAdd()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'month'=>'string',
+            'groups_id'=>'int',
+            'students_id'=>'int',
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\memberShip::create($RequestData);

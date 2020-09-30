@@ -87,7 +87,13 @@ class examBank
     public static function PostAdd()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'question'=>'string',
+            'c1'=>'string',
+            'c2'=>'string',
+            'c3'=>'string',
+            'c4'=>'string',
+            'mark'=>'string',
+            'levels_id'=>'id'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examsBank::create($RequestData);
@@ -101,7 +107,13 @@ class examBank
     public static function PostEdit()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'question'=>'string',
+            'c1'=>'string',
+            'c2'=>'string',
+            'c3'=>'string',
+            'c4'=>'string',
+            'mark'=>'string',
+            'levels_id'=>'id'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examsBank::update($RequestData);
@@ -114,7 +126,7 @@ class examBank
     public static function PostDelete()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examsBank::delete($RequestData['id']);

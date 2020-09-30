@@ -86,7 +86,9 @@ class groups
     public static function PostAdd()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'name' => 'string' ,
+            'group_data' => 'string' ,
+            'levels_id' => 'int' ,
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\groups::create($RequestData);
@@ -100,7 +102,9 @@ class groups
     public static function PostEdit()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'name' => 'string' ,
+            'group_data' => 'string' ,
+            'levels_id' => 'int' ,
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\groups::update($RequestData);
@@ -114,7 +118,7 @@ class groups
     public static function PostDelete()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\groups::delete($RequestData['id']);

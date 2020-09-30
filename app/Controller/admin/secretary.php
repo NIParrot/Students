@@ -27,7 +27,8 @@ class secretary
     public static function PostRegister()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'user'=>['string','int','email'],
+            'paswword'=>['string','int','email'],
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\admins::create($RequestData);

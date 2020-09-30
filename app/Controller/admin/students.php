@@ -27,7 +27,11 @@ class students
     public static function PostRegister()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'name'=>'string',
+            'user'=>'string',
+            'password'=>'string',
+            'phone'=>'string',
+            'groups_id'=>'id',
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\students::create($RequestData);

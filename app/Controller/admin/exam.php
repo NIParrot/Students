@@ -87,7 +87,9 @@ class exam
     public static function PostAdd()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'name'=>['string','int'],
+            'exam_date' => 'date' ,
+            'TimePerMin' => 'int' 
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\exam::create($RequestData);
@@ -101,7 +103,9 @@ class exam
     public static function PostEdit()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'name'=>['string','int'],
+            'exam_date' => 'date' ,
+            'TimePerMin' => 'int' 
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\exam::update($RequestData);
@@ -114,7 +118,7 @@ class exam
     public static function PostDelete()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\exam::delete($RequestData['id']);

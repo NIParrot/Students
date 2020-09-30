@@ -87,7 +87,9 @@ class examQuestions
     public static function PostAdd()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'exam_id'=>'int',
+            'examsBank_id'=>'int',
+            'TimePerMin'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::create($RequestData);
@@ -101,7 +103,9 @@ class examQuestions
     public static function PostEdit()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'exam_id'=>'int',
+            'examsBank_id'=>'int',
+            'TimePerMin'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::update($RequestData);
@@ -114,7 +118,7 @@ class examQuestions
     public static function PostDelete()
     {
         $validate = [
-            'dashboard_user'=>['string','int','email'],
+            'id'=>'int',
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::delete($RequestData['id']);
