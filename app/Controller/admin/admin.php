@@ -26,7 +26,9 @@ class admin
 
     public static function login()
     {
-        \NI_security::unauthorized('login', true, '/admin');
+        \NI_security::unauthorized('role', 'student', '/');
+        \NI_security::unauthorized('role', 'admin', '/admin');
+        \NI_security::unauthorized('role', 'secretary', '/secretary');
         $path = ['admin','login'];
         $static = [
             'css_arr' => ['style'],

@@ -25,7 +25,9 @@ class secretary
 
     public static function login()
     {
-        \NI_security::unauthorized('login', true, '/secretary');
+        \NI_security::unauthorized('role', 'student', '/');
+        \NI_security::unauthorized('role', 'admin', '/admin');
+        \NI_security::unauthorized('role', 'secretary', '/secretary');
         $path = ['secretary','login'];
         $static = [
             'css_arr' => ['style'],

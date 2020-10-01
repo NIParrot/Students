@@ -40,9 +40,11 @@ class NI_request
                         $TempErrorCheck[] =  $key.' not valid';
                     }
                 } else {
-                    if ($value = 'date') {
+                    if ($value == 'date') {
                         $value = 'regex,regex:/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/';
                     }
+
+                    echo $value;
                     $data[$key] = NI_security::Filterus($value, self::all()[$key] ?? false)[1] ?? false ;
                     if ($data[$key] == false) {
                         $TempErrorCheck[] =  $key.' not valid';

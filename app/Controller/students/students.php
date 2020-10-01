@@ -8,6 +8,7 @@ class students
     public static function index()
     {
         \NI_security::authorized('login', true, '/student/login');
+        \NI_security::authorized('role', 'student', '/student/login');
         $path = ['students','home'];
         $static = [
             'css_arr' => [],
@@ -27,7 +28,10 @@ class students
 
     public static function login()
     {
-        \NI_security::unauthorized('login', true, '/');
+        \NI_security::unauthorized('role', 'student', '/');
+        \NI_security::unauthorized('role', 'admin', '/admin');
+        \NI_security::unauthorized('role', 'secretary', '/secretary');
+        
         $path = ['students','login'];
         $static = [
             'css_arr' => ['style'],
@@ -51,6 +55,7 @@ class students
              'password'=>'string'
          ];
         $RequestData = \NI_request::validate($validate);
+        print_r($RequestData);
         $user = \model\students::check($RequestData);
         if (!empty($user)) {
             $_SESSION['login'] = true;

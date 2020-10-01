@@ -9,5 +9,5 @@ NI_route::get('/secretary', function () {
     NI_redirect::path('/secretary/home');
 });
 NI_route::get('/secretary/home', function () {
-    NI_Controller::run('secretary\students@index');
+    NI_Controller::run('secretary\secretary@index');
 });
