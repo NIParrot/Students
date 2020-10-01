@@ -98,9 +98,8 @@ class examBank
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examsBank::create($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 
@@ -118,9 +117,8 @@ class examBank
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examsBank::update($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
     public static function PostDelete()
@@ -131,9 +129,33 @@ class examBank
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examsBank::delete($RequestData['id']);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
+        }
+    }
+
+    public static function uploadCsv()
+    {
+        $csvFile = $_FILES["file"]["tmp_name"];
+    
+        if ($_FILES["file"]["size"] > 0) {
+            $file = fopen($csvFile, "r");
+
+            while (! feof($file)) {
+                $arrayData = fgetcsv($file);
+                $postData = [
+                    'question' => $arrayData[0],
+                    'c1' => $arrayData[1],
+                    'c2' => $arrayData[2],
+                    'c3' => $arrayData[3],
+                    'c4' => $arrayData[4],
+                    'mark' => $arrayData[5],
+                    'levels_id' => $arrayData[6]
+                ];
+                \model\examsBank::create($postData);
+            }
+
+            fclose($file);
         }
     }
 }
