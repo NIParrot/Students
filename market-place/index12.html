@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="css/bootstrab.min.css">
+	<link rel="stylesheet" href="css/style4.css">
+	<link rel="stylesheet" href="fonts/Tajawal-Light.ttf">
+	<link rel="stylesheet" href="fonts/Tajawal-Bold.ttf">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container mt-3">
+		<table id="myTable" class="display nowrap text-right" style="width:100%">
+			<thead>
+				<tr>
+					<th>اسم الإمتحان</th>
+					<th>وقت الإمتحان</th>
+					<th>تاريخ الإمتحان</th>
+					<th>خيارات</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cheque-amt"> إمتحان علي الوحدة الأولي</td>
+					<td>30 دقيقة</td>
+					<td>25/10/2020</td>
+					<td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+							بدأ الإمتحان
+						</button></td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+	<script src="js/jQuery.js"></script>
+	<script src="js/bootstrab.min.js"></script>
+	<script src="js/dataTables.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#myTable').DataTable({
+				"searching": false,
+				"paging": false,
+				"info": false,
+				"lengthChange": false
+			});
+		});
+	</script>
+</body>
+
+</html>
