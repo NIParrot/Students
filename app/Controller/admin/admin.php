@@ -10,7 +10,7 @@ class admin
         \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','home'];
         $static = [
-            'css_arr' => [],
+            'css_arr' => ['style2'],
             'header_js_arr' => [],
             'footer_js_arr' => []
         ];

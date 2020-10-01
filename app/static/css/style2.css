@@ -1,45 +1,67 @@
 body {
-  font-family: "Tajawal", "Times New Roman", Times, serif;
-  font-weight: bold;
+    font-family: "Tajawal", "Times New Roman", Times, serif;
+    font-weight: bold;
 }
+
 body nav {
-  margin-bottom: 5rem;
+    margin-bottom: 5rem;
 }
+
 body .container .up .frist-up {
-  height: 10rem;
-  width: 40%;
-  float: right;
-  margin-left: 10%;
-  margin-right: 5%;
-  background-color: #D3D3D3;
-  border-radius: 1rem;
+    height: 10rem;
+    width: 40%;
+    float: right;
+    margin-left: 10%;
+    margin-right: 5%;
+    background-color: #D3D3D3;
+    border-radius: 1rem;
 }
+
 body .container .up .second-up {
-  height: 10rem;
-  width: 40%;
-  float: left;
-  margin-left: 5%;
-  background-color: #C0C0C0;
-  border-radius: 1rem;
+    height: 10rem;
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    background-color: #C0C0C0;
+    border-radius: 1rem;
 }
+
 body .container .down .frist-down {
-  height: 10rem;
-  width: 40%;
-  float: right;
-  margin-left: 10%;
-  margin-right: 5%;
-  background-color: #A9A9A9;
-  border-radius: 1rem;
-  margin-top: 2rem;
+    height: 10rem;
+    width: 40%;
+    float: right;
+    margin-left: 10%;
+    margin-right: 5%;
+    background-color: #A9A9A9;
+    border-radius: 1rem;
+    margin-top: 2rem;
 }
+
 body .container .down .second-down {
-  height: 10rem;
-  width: 40%;
-  float: left;
-  margin-left: 5%;
-  background-color: #808080;
-  border-radius: 1rem;
-  margin-top: 2rem;
+    height: 10rem;
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    background-color: #808080;
+    border-radius: 1rem;
+    margin-top: 2rem;
 }
+
+#linkcard {
+    border-radius: 25px;
+    background: #0f3057;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 20px;
+}
+
+#alinkcard {
+    color: #f1f3f8;
+    text-decoration: none
+}
+
 
 /*# sourceMappingURL=style2.css.map */
