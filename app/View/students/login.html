@@ -1,9 +1,30 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>foobar</title>
-	</head>
-	<body>
-		<div>foobar</div>
-	</body>
-</html>
+<div class="container">
+    <div class="logo">
+        <div class="logo-abs">
+            logo
+        </div>
+    </div>
+    <div class="form">
+        <form method="POST" action="{{LoginForm}}" autocomplete="off">
+            <div class="form-group">
+                <div class="alert alert-primary" style="text-align: center;" role="alert">
+                    لوحة تسجيل دخول الطلاب
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="float-right">إسم المستخدم او الهاتف</label>
+                <input type="text" name="user" class="form-control" placeholder="حروف انجليزية فقط او ارقام" id="exampleInputEmail1" aria-describedby="emailHelp" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="float-right">الرقم السري</label>
+                <input type="password" placeholder="ادخل كلمة السر" name="password" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div class="button">
+                <div class="button-abs">
+                    <button type="submit" class="btn btn-primary float-right">تسجيل الدخول</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

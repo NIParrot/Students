@@ -1,0 +1,50 @@
+body {
+	font-family: 'Tajawal', 'Times New Roman', Times, serif;
+	font-weight: bold;
+	nav {
+		margin-bottom: 5rem;
+	}
+	.container {
+		.up {
+			.frist-up {
+				height: 10rem;
+				width: 40%;
+				float: right;
+				margin-left: 10%;
+				margin-right: 5%;
+				background-color: #D3D3D3;
+				border-radius: 1rem;
+			}
+			.second-up {
+				height: 10rem;
+				width: 40%;
+				float: left;
+				margin-left: 5%;
+				background-color: #C0C0C0;
+				border-radius: 1rem;
+			}
+		}
+		.down {
+			.frist-down {
+				height: 10rem;
+				width: 40%;
+				float: right;
+				margin-left: 10%;
+				margin-right: 5%;
+				background-color: #A9A9A9	;
+				border-radius: 1rem;
+				margin-top: 2rem;
+			}
+			.second-down {
+				height: 10rem;
+				width: 40%;
+				float: left;
+				margin-left: 5%;
+				background-color: #808080;
+				border-radius: 1rem;
+				margin-top: 2rem;
+	
+			}
+		}
+	}
+}

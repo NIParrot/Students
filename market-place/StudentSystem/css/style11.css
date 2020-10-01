@@ -1,0 +1,21 @@
+body {
+  font-family: "Tajawal", "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+body .quation-block {
+  margin-top: 2rem;
+}
+body .quation-block .quation {
+  text-align: right;
+}
+body .quation-block .answers {
+  position: relative;
+}
+body .quation-block .answers .sm-block {
+  display: block;
+  float: none !important;
+  margin-top: 1rem;
+  font-weight: lighter;
+}
+
+/*# sourceMappingURL=style11.css.map */

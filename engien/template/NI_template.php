@@ -139,6 +139,8 @@ class NI_template
             }
         }
         echo '
+            <link rel="stylesheet" href="/app/static/fonts/Tajawal-Light.ttf">
+            <link rel="stylesheet" href="/app/static/fonts/Tajawal-Bold.ttf">
             <link rel="icon" href="/storage/icon/favicon.ico">
         </head>
         <body>

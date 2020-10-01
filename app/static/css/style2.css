@@ -1,0 +1,45 @@
+body {
+  font-family: "Tajawal", "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+body nav {
+  margin-bottom: 5rem;
+}
+body .container .up .frist-up {
+  height: 10rem;
+  width: 40%;
+  float: right;
+  margin-left: 10%;
+  margin-right: 5%;
+  background-color: #D3D3D3;
+  border-radius: 1rem;
+}
+body .container .up .second-up {
+  height: 10rem;
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  background-color: #C0C0C0;
+  border-radius: 1rem;
+}
+body .container .down .frist-down {
+  height: 10rem;
+  width: 40%;
+  float: right;
+  margin-left: 10%;
+  margin-right: 5%;
+  background-color: #A9A9A9;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+body .container .down .second-down {
+  height: 10rem;
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  background-color: #808080;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=style2.css.map */

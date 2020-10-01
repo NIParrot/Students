@@ -76,40 +76,36 @@ class NI_route
 
     public static function post($action, Closure $callback)
     {
-        $routepath = '/'.implode('', explode('/', explode("?", $action)[0]));
-        if (key_exists($routepath, self::$PostRoutes)) {
+        if (key_exists($action, self::$PostRoutes)) {
             exit;
         }
-        self::$PostRoutes[$routepath] = $callback;
+        self::$PostRoutes[$action] = $callback;
     }
 
     public static function put($action, Closure $callback)
     {
         NI_request::$data = NI_request::FromatPostData(file_get_contents("php://input"));
-        $routepath = '/'.implode('', explode('/', explode("?", $action)[0]));
-        if (key_exists($routepath, self::$PutRoutes)) {
+        if (key_exists($action, self::$PutRoutes)) {
             exit;
         }
-        self::$PutRoutes[$routepath] = $callback;
+        self::$PutRoutes[$action] = $callback;
     }
 
     public static function delete($action, Closure $callback)
     {
         NI_request::$data = NI_request::FromatPostData(file_get_contents("php://input"));
-        $routepath = '/'.implode('', explode('/', explode("?", $action)[0]));
-        if (key_exists($routepath, self::$DeleteRoutes)) {
+        if (key_exists($action, self::$DeleteRoutes)) {
             exit;
         }
-        self::$DeleteRoutes[$routepath] = $callback;
+        self::$DeleteRoutes[$action] = $callback;
     }
 
     public static function any($action, Closure $callback)
     {
-        $routepath = '/'.implode('', explode('/', explode("?", $action)[0]));
-        if (key_exists($routepath, self::$any)) {
+        if (key_exists($action, self::$any)) {
             exit;
         }
-        self::$any[$routepath] = $callback;
+        self::$any[$action] = $callback;
     }
 
     public static function run($action)
