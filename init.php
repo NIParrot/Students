@@ -31,7 +31,7 @@ array_map(static function ($file) {
 }, $CoreLoader);
 
 if (!isset($_SESSION['lang'])) {
-    $_SESSION['lang'] = 'en';
+    $_SESSION['lang'] = 'ar';
 }
 if (isset($_POST['changlang'])) {
     if (isset($_SESSION['lang']) && $_SESSION['lang'] == "ar") {

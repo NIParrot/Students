@@ -17,6 +17,7 @@ class groups
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -37,6 +38,7 @@ class groups
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -57,6 +59,7 @@ class groups
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -77,6 +80,7 @@ class groups
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -93,9 +97,8 @@ class groups
         $RequestData = \NI_request::validate($validate);
         $dash = \model\groups::create($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 
@@ -109,9 +112,8 @@ class groups
         $RequestData = \NI_request::validate($validate);
         $dash = \model\groups::update($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 
@@ -123,9 +125,8 @@ class groups
         $RequestData = \NI_request::validate($validate);
         $dash = \model\groups::delete($RequestData['id']);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 }

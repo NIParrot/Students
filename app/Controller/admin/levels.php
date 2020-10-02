@@ -2,21 +2,25 @@
 
 namespace admin;
 
+use \model\levels as Mlevels;
+
 class levels
 {
     public static function index(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','levels','home'];
         $static = [
-            'css_arr' => [],
-            'header_js_arr' => [],
-            'footer_js_arr' => []
+            'css_arr' => ['datatablefinal','style4'],
+            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/levels-homepage'],
+            'header_js_arr' => []
         ];
         $data = [
-            
+            'levels' => Mlevels::select()
         ];
+
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -26,17 +30,18 @@ class levels
 
     public static function add(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','levels','add'];
         $static = [
-            'css_arr' => [],
+            'css_arr' => ['style4'],
             'header_js_arr' => [],
             'footer_js_arr' => []
         ];
         $data = [
-            
+            'form' => '/admin/levels/add'
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -50,13 +55,14 @@ class levels
         //NI_security::authorized('login',true,'/dashboard/login');
         $path = ['admin','levels','edit'];
         $static = [
-            'css_arr' => [],
-            'header_js_arr' => [],
+            'css_arr' => ['datatablefinal','style4'],
+            'header_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min'],
             'footer_js_arr' => []
         ];
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -77,6 +83,7 @@ class levels
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -87,15 +94,13 @@ class levels
     public static function PostAdd()
     {
         $validate = [
-            'name'=>['string','int'],
-            'exam_date' => 'date' ,
-            'TimePerMin' => 'int'
+            'name'=>['string']
         ];
         $RequestData = \NI_request::validate($validate);
-        $dash = \model\exam::create($RequestData);
+        $dash = \model\levels::create($RequestData);
         if (!empty($dash)) {
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'حدث خطا غير متوقع برجاء التواصل مع المهندس المسؤول');
         }
     }
 

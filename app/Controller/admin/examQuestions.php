@@ -17,6 +17,7 @@ class examQuestions
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -37,6 +38,7 @@ class examQuestions
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -57,6 +59,7 @@ class examQuestions
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -77,6 +80,7 @@ class examQuestions
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -94,9 +98,8 @@ class examQuestions
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::create($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 
@@ -110,9 +113,8 @@ class examQuestions
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::update($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
     public static function PostDelete()
@@ -123,9 +125,8 @@ class examQuestions
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::delete($RequestData['id']);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 }

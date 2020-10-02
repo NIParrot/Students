@@ -17,6 +17,7 @@ class membership
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -33,9 +34,8 @@ class membership
         $RequestData = \NI_request::validate($validate);
         $dash = \model\memberShip::create($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 }

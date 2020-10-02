@@ -17,6 +17,7 @@ class students
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -36,9 +37,8 @@ class students
         $RequestData = \NI_request::validate($validate);
         $dash = \model\students::create($RequestData);
         if (!empty($dash)) {
-            
         } else {
-            \NI_redirect::with($_SERVER['REQUEST_URI'],'danger','Error in username or password[×_×]!');
+            \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
     }
 }

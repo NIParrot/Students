@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html>
+<div class="col-md-12 text-center mb-3 mt-3">
+    <a href="/admin/levels/add"><button class="btn btn-primary"> إضافة</button></a>
+</div>
 
-<head>
-    <title>exam home</title>
-</head>
+<div class="container">
+    <table id="myTable" class="display nowrap text-right" style="width:100%">
+        <thead>
+            <tr>
+                <th>المرحلة</th>
+                <th>تعديل</th>
+                <th>حذف</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for level in levels %}
+            <div>
+                <tr>
+                    <td>{{level['name']}}</td>
+                    <td><a href="/admin/levels/edit/{{level['id']}}"><button type="button" class="btn btn-success">تعديل</button></a></td>
+                    <td><a href="/admin/levels/delete/{{level['id']}}"><button type="button" class="btn btn-danger">حذف</button></a></td>
+                </tr>
+            </div>
 
-<body>
-    <div>foobar</div>
-</body>
-
-</html>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
