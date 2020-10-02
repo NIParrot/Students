@@ -6,16 +6,17 @@ class groups
 {
     public static function index(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','groups','home'];
         $static = [
-            'css_arr' => [],
-            'header_js_arr' => [],
-            'footer_js_arr' => []
+            'css_arr' => ['datatablefinal','style4'],
+            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/grouphome'],
+            'header_js_arr' => []
         ];
         $data = [
-            
+            'groups' => \model\groups::select(),
+            'levels' => \model\levels::select()
         ];
         \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
@@ -27,8 +28,8 @@ class groups
 
     public static function add(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','groups','add'];
         $static = [
             'css_arr' => [],
@@ -48,8 +49,8 @@ class groups
 
     public static function edit(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','groups','edit'];
         $static = [
             'css_arr' => [],
@@ -69,8 +70,8 @@ class groups
 
     public static function delete(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','groups','delete'];
         $static = [
             'css_arr' => [],

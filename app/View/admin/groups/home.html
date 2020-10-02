@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>group home</title>
-</head>
-
-<body>
-    <div>foobar</div>
-</body>
-
-</html>
+<div class="col-md-12 text-center mb-3 mt-3">
+    <button class="btn btn-primary"> إضافة</button>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="container mb-3 mt-3">
+                <div class="alert alert-danger mt-3 text-right" role="alert">
+                    <p>هل انت متأكد من حذف هذه المجموعة؟</p>
+                </div>
+                <div class="float-right">
+                    <button type="button" id='target2' class="btn btn-danger ml-1">نعم</button>
+                    <button type="button" id="target3" class="btn btn-light">لا</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table id="myTable" class="display nowrap text-right" style="width:100%">
+        <thead>
+            <tr>
+                <th>المرحلة</th>
+                <th>المجموعة</th>
+                <th>تعديل</th>
+                <th>حذف</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group in groups %}
+            <div>
+                <tr>
+                    <td> {{levels[group['id']-1]['name']}}</td>
+                    <td> {{group['name']}} {{group['group_data']}} </td>
+                    <td><a href="/admin/groups/edit/{{group['id']}}"><button type="button" class="btn btn-success">
+                        تعديل
+                    </button></a></td>
+                    <td><a href="/admin/groups/delete/{{group['id']}}"><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">
+                        حذف
+                    </button></a></td>
+                </tr>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
