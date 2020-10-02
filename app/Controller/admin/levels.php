@@ -51,16 +51,18 @@ class levels
 
     public static function edit(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','levels','edit'];
         $static = [
-            'css_arr' => ['datatablefinal','style4'],
-            'header_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min'],
+            'css_arr' => ['style4'],
+            'header_js_arr' => [],
             'footer_js_arr' => []
         ];
         $data = [
-            
+            'id' => \NI_request::$data['id'],
+            'modeldata' => Mlevels::find(\NI_request::$data),
+            'form'=>'/admin/levels/edit'
         ];
         \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
@@ -72,16 +74,18 @@ class levels
 
     public static function delete(): void
     {
-        //NI_security::unauthorized('login',true,'/dashboard');
-        //NI_security::authorized('login',true,'/dashboard/login');
+        \NI_security::authorized('login', true, '/admin/login');
+        \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','levels','delete'];
         $static = [
-            'css_arr' => [],
+            'css_arr' => ['style4'],
             'header_js_arr' => [],
             'footer_js_arr' => []
         ];
         $data = [
-            
+            'id' => \NI_request::$data['id'],
+            'modeldata' => Mlevels::find(\NI_request::$data),
+            'form'=>'/admin/levels/delete'
         ];
         \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
@@ -99,6 +103,7 @@ class levels
         $RequestData = \NI_request::validate($validate);
         $dash = \model\levels::create($RequestData);
         if (!empty($dash)) {
+            \NI_redirect::with('/admin/levels', 'primary', 'تم الاضافة بنجاح');
         } else {
             \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'حدث خطا غير متوقع برجاء التواصل مع المهندس المسؤول');
         }
@@ -107,13 +112,13 @@ class levels
     public static function PostEdit()
     {
         $validate = [
-            'name'=>['string','int'],
-            'exam_date' => 'date' ,
-            'TimePerMin' => 'int'
+            'id'=>['int'],
+            'name' => 'string'
         ];
         $RequestData = \NI_request::validate($validate);
-        $dash = \model\exam::update($RequestData);
+        $dash = \model\levels::update($RequestData);
         if (!empty($dash)) {
+            \NI_redirect::with('/admin/levels', 'primary', 'تم التعديل بنجاح');
         } else {
             \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }
@@ -124,8 +129,9 @@ class levels
             'id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
-        $dash = \model\exam::delete($RequestData['id']);
+        $dash = \model\levels::delete($RequestData['id']);
         if (!empty($dash)) {
+            \NI_redirect::with('/admin/levels', 'primary', 'تم الحذف بنجاح');
         } else {
             \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }

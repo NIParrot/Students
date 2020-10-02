@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <div class=" m-3">
+        {% if modeldata[0]['name'] is defined and modeldata[0]['name'] is not null %}
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="float-right">{{modeldata[0]['name']}}</label>
+                <input type="hidden" name="id" value="{{id}}">
+                <input required class="form-control form-control-lg" name="name" type="text" id="formGroupExampleInput" placeholder="اسم المرحلة - مثال - الصف الاول الثانوي">
+                <button type="submit" class="btn btn-primary mt-3 float-right">تاكيد التعديل</button>
+            </div>
+        </form>
+        {% else %}
+        <p>لا يمكن تعديل رقم المعرف من الرابط الى رقم معرف غير موجود</p>
+        {% endif %}
 
-<head>
-    <title>exam edit</title>
-</head>
-
-<body>
-    <div>foobar</div>
-</body>
-
-</html>
+    </div>
+</div>

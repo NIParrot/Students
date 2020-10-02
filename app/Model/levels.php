@@ -44,7 +44,7 @@ class levels
 
     public static function find(array $data)
     {
-        return \ORM::for_table("levels")->find_one([$data["id"]]);
+        return \ORM::for_table("levels")->where('id', $data["id"])->find_array();
     }
     
     public static function delete(int $id)
