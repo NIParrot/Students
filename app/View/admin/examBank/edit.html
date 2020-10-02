@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <div class=" m-3 ml-3">
+        {% if modeldata[0]['question'] is defined and modeldata[0]['question'] is not null %}
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <input type="hidden" name="id" value="{{id}}">
+            <input class="form-control form-control-lg mt-3" name="question" value="{{modeldata[0]['question']}}" type="text" required placeholder="السؤال">
+            <input class="form-control form-control-lg mt-3" name="c1" value="{{modeldata[0]['c1']}}" type="text" required placeholder="إجابة صحيح">
+            <input class="form-control form-control-lg mt-3" name="c2" type="text" value="{{modeldata[0]['c2']}}" required placeholder="إجابة خاطئة">
+            <input class="form-control form-control-lg mt-3" name="c3" type="text" value="{{modeldata[0]['c3']}}" required placeholder="إجابة خاطئة">
+            <input class="form-control form-control-lg mt-3" name="c4" type="text" value="{{modeldata[0]['c4']}}" required placeholder="إجابة خاطئة">
 
-<head>
-    <title>exbank edit</title>
-</head>
+            <input class="form-control form-control-lg mt-3" name="mark" type="number" value="{{modeldata[0]['mark']}}" required placeholder="الدرجة">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" class="float-right mt-3">المرحلة</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="levels_id">
+                    {% for level in lavels %}
+                
 
-<body>
-    <div>foobar</div>
-</body>
+                    <option value="{{level['id']}}">{{level['name']}}</option>
 
-</html>
+
+            {% endfor %}
+				</select>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">تأكيد</button>
+        </form>
+        {% else %}
+        <p>لا يمكن تعديل رقم المعرف من الرابط الى رقم معرف غير موجود</p>
+        {% endif %}
+    </div>
+</div>
+</div>

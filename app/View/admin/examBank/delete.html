@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <div class=" m-3">
+        {% if modeldata[0]['question'] is defined and modeldata[0]['question'] is not null %}
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <div class="form-group">
+                <p> هل انت متاكد من حذف : {{modeldata[0]['question']}}</p>
+                <input type="hidden" name="id" value="{{id}}">
+                <button type="submit" class="btn btn-primary mt-3">تاكيد الحذف</button>
+            </div>
+        </form>
+        {% else %}
+        <p>لا يمكن تعديل رقم المعرف من الرابط الى رقم معرف غير موجود</p>
+        {% endif %}
 
-<head>
-    <title>exbank dele</title>
-</head>
-
-<body>
-    <div>foobar</div>
-</body>
-
-</html>
+    </div>
+</div>

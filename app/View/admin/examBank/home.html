@@ -1,12 +1,50 @@
-<!DOCTYPE html>
-<html>
+<div class="col-md-12 text-center mb-3 mt-3">
+    <a href="/admin/examsBank/add"><button class="btn btn-primary"> إضافة</button></a>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="container mb-3 mt-3">
+                <div class="alert alert-danger mt-3 text-right" role="alert">
+                    <p>هل انت متأكد من حذف هذا السؤال؟</p>
+                </div>
+                <div class="float-right">
+                    <button type="button" id='target2' class="btn btn-danger ml-1">نعم</button>
+                    <button type="button" id="target3" class="btn btn-light">لا</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table id="myTable" class="display text-right data-table">
 
-<head>
-    <title>exambank</title>
-</head>
+        <thead>
+            <tr>
+                <th>السؤال</th>
+                <th>الإجابة الصحيحة</th>
+                <th>الدرجة</th>
+                <th>المستوي</th>
+                <th>تعديل</th>
+                <th>حذف</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exam in exambank %}
+            <tr>
+                <td> {{exam['question']}}</td>
+                <td> {{exam['c1']}}</td>
+                <td>{{exam['mark']}}</td>
+                <td>{{levels[exam['levels_id']-1]['name']}}</td>
+                <!-- <td><button type="button" class="btn btn-success">
+							تعديل
+                        </button></td> -->
+                <td><a href="/admin/examsBank/edit/{{exam['id']}}"><button type="button" class="btn btn-success">تعديل</button></a></td>
+                <td><a href="/admin/examsBank/delete/{{exam['id']}}"><button type="button" class="btn btn-danger">حذف</button></a></td>
 
-<body>
-    <div>foobar</div>
-</body>
+            </tr>
+            {% endfor %}
 
-</html>
+        </tbody>
+    </table>
+</div>

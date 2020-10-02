@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <div class=" m-3 ml-3">
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <input class="form-control form-control-lg mt-3" name="question" type="text" required placeholder="السؤال">
+            <input class="form-control form-control-lg mt-3" name="c1" type="text" required placeholder="إجابة صحيح">
+            <input class="form-control form-control-lg mt-3" name="c2" type="text" required placeholder="إجابة خاطئة">
+            <input class="form-control form-control-lg mt-3" name="c3" type="text" required placeholder="إجابة خاطئة">
+            <input class="form-control form-control-lg mt-3" name="c4" type="text" required placeholder="إجابة خاطئة">
+            <input class="form-control form-control-lg mt-3" name="mark" type="number" required placeholder=" الدرجه">
 
-<head>
-    <title>exbank add</title>
-</head>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" class="float-right mt-3">المرحلة</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="levels_id">
+                {% for level in lavels %}
+                
 
-<body>
-    <div>foobar</div>
-</body>
+                        <option value="{{level['id']}}">{{level['name']}}</option>
 
-</html>
+    
+                {% endfor %}
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">تأكيد</button>
+        </form>
+    </div>
+</div>

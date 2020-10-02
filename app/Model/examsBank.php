@@ -56,7 +56,7 @@ class examsBank
 
     public static function find(array $data)
     {
-        return \ORM::for_table("examsBank")->find_one([$data["id"]]);
+        return \ORM::for_table("examsBank")->where('id',$data["id"])->findArray();
     }
     
     public static function delete(int $id)
