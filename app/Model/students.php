@@ -52,10 +52,10 @@ class students
 
     public static function find(array $data)
     {
-        return \ORM::for_table("students")->find_one([$data["id"]]);
+        return \ORM::for_table("students")->where('id',$data["id"])->findArray();
     }
     
-    public static function delete(int $id)
+    public static function disactive(int $id)
     {
         $delete = \ORM::for_table("students")->find_one([$id]);
         if (is_bool($delete)) {
@@ -63,6 +63,31 @@ class students
         }
         $delete->set("delete_flag", 1);
         if ($delete->save()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function active(int $id)
+    {
+        $delete = \ORM::for_table("students")->find_one([$id]);
+        if (is_bool($delete)) {
+            return false ;
+        }
+        $delete->set("delete_flag", 0);
+        if ($delete->save()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function delete(int $id)
+    {
+        $student = \ORM::for_table("students")->find_one([$id]);
+        $student->delete();
+        if ($student->save()) {
             return true;
         } else {
             return false;

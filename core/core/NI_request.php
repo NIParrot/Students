@@ -41,7 +41,7 @@ class NI_request
                     }
                 } else {
                     if ($value == 'date') {
-                        $value = 'regex,regex:/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/';
+                        $value = 'regex,regex:/^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/';
                     }
 
                     echo $value;

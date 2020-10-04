@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <div class="col-md-12 text-center mb-3 mt-3">
+        <a href="/admin/exam/add"><button class="btn btn-primary"> إضافة</button></a>
+    </div>
+    <table id="myTable" class="display nowrap text-right" style="width:100%">
+        <thead>
+            <tr>
+                <th>اسم الإمتحان</th>
+                <th>وقت الإمتحان</th>
+                <th>تاريخ الإمتحان</th>
+                <th> تعديل </th>
+                <th> حذف </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for exam in exams %}
+            <tr>
+                <td class="cheque-amt"> {{exam['name']}}</td>
+                <td>{{exam['TimePerMin']}} </td>
+                <td>{{exam['exam_date']}}</td>
+
+                <td><a href="/admin/exam/edit/{{exam['id']}}"><button type="button" class="btn btn-success">تعديل</button></a></td>
+                <td><a href="/admin/exam/delete/{{exam['id']}}"><button type="button" class="btn btn-danger">حذف</button></a></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

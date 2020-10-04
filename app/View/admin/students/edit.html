@@ -1,0 +1,29 @@
+<div class="container">
+    <div class=" m-3 ml-3">
+        {% if modeldata[0]['name'] is defined and modeldata[0]['name'] is not null %}
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <input type="hidden" name="id" value="{{id}}">
+            <input class="form-control form-control-lg mt-3" name="name" value="{{modeldata[0]['name']}}" type="text" required placeholder="السؤال">
+            <input class="form-control form-control-lg mt-3" name="user" value="{{modeldata[0]['user']}}" type="text" required placeholder="إجابة صحيح">
+            <input class="form-control form-control-lg mt-3" name="phone" type="text" value="{{modeldata[0]['phone']}}" required placeholder="إجابة خاطئة">
+            <input class="form-control form-control-lg mt-3" name="password" type="text" value="{{modeldata[0]['password']}}" required placeholder="إجابة خاطئة">
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" class="float-right mt-3">المرحلة</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="groups_id">
+                    {% for group in groups %}
+                
+                    <option value="{{group['id']}}">{{group['name']}}</option>
+
+
+            {% endfor %}
+				</select>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">تأكيد</button>
+        </form>
+        {% else %}
+        <p>لا يمكن تعديل رقم المعرف من الرابط الى رقم معرف غير موجود</p>
+        {% endif %}
+    </div>
+</div>
+</div>

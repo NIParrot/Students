@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <div class=" m-3 ml-3">
 
-<head>
-    <title>exam edit</title>
-</head>
-
-<body>
-    <div>foobar</div>
-</body>
-
-</html>
+        {% if modeldata[0]['name'] is defined and modeldata[0]['name'] is not null %}
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <input type="hidden" name="id" value="{{id}}">
+            <input class="form-control form-control-lg mt-3" name="name" value="{{modeldata[0]['name']}}" type="text" required placeholder="السؤال">
+            <input class="form-control form-control-lg mt-3" name="exam_date" value="{{modeldata[0]['exam_date']}}" type="date" required placeholder="إجابة صحيح">
+            <input class="form-control form-control-lg mt-3" name="TimePerMin" type="number" value="{{modeldata[0]['TimePerMin']}}" required placeholder="إجابة خاطئة">
+            <button type="submit" class="btn btn-primary float-right">تأكيد</button>
+        </form>
+        {% else %}
+        <p>لا يمكن تعديل رقم المعرف من الرابط الى رقم معرف غير موجود</p>
+        {% endif %}
+    </div>
+</div>
+</div>

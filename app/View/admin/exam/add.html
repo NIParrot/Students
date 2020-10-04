@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>exam add</title>
-</head>
-
-<body>
-    <div>foobar</div>
-</body>
-
-</html>
+<div class="container">
+    <div class=" m-3 ml-3">
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <input class="form-control form-control-lg mt-3" name="name" type="text" required placeholder="اسم الامتحان">
+            <input class="form-control form-control-lg mt-3" name="exam_date" type="date" required placeholder=" تاريخ الامتحان">
+            <input class="form-control form-control-lg mt-3" name="TimePerMin" type="number" required placeholder=" وقت الامتحان">
+            <br>
+            <button type="submit" class="btn btn-primary float-right">تأكيد</button>
+        </form>
+    </div>
+</div>

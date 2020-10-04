@@ -1,0 +1,24 @@
+<div class="container">
+    <div class=" m-3 ml-3">
+        <form action="{{form}}" method="POST" autocomplete="off">
+            <input class="form-control form-control-lg mt-3" name="name" type="text" required placeholder="اسم الطالب ">
+            <input class="form-control form-control-lg mt-3" name="user" type="text" required placeholder=" اسم المستخدم">
+            <input class="form-control form-control-lg mt-3" name="phone" type="number" required placeholder=" رقم الهاتف ">
+            <input class="form-control form-control-lg mt-3" name="password" type="password" required placeholder=" كلمه المرور">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" class="float-right mt-3">المجموعه</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="groups_id">
+
+                    
+                {% for group in groups %}
+                
+                        <option value="{{group['id']}}">{{group['name']}}</option>
+
+    
+                {% endfor %}
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">تأكيد</button>
+        </form>
+    </div>
+</div>

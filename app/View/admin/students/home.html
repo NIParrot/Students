@@ -1,0 +1,46 @@
+<div class="col-md-12 text-center mb-3 mt-3">
+    <a href="/admin/student/add"><button class="btn btn-primary"> إضافة</button></a>
+</div>
+
+</div>
+<div class="container">
+    <table id="myTable" class="display nowrap text-right" style="width:100%">
+        <thead>
+            <tr>
+                <th> المجموعة</th>
+                <th>اسم المستخدم</th>
+                <th>الهاتف</th>
+                <th>كلمة المرور</th>
+                <th>المرحلة</th>
+                <th>تعديل</th>
+                <th>ايقاف مؤقت</th>
+                <th>حذف</th>
+            </tr>
+        </thead>
+        <tbody>
+            <p> </p>
+            <div>
+                {% for student in students %}
+
+                <tr>
+                    <td>{{groups[student['groups_id']-1]['name']}} </td>
+                    <td>{{student['name']}}</td>
+                    <td>{{student['phone']}}</td>
+                    <td>{{student['password']}}</td>
+                    <td>{{levels[groups[student['groups_id']-1]['levels_id']-1]['name']}}</td>
+                    <td><a href="/admin/student/edit/{{student['id']}}"><button type="button" class="btn btn-info">تعديل</button></a></td>
+
+                    {% if student['delete_flag'] == 0 %}
+                    <td><a href="/admin/student/disactive/{{student['id']}}"><button type="button" class="btn btn-warning">ايقاف مؤقت</button></a></td>
+                    {% else %}
+                    <td><a href="/admin/student/active/{{student['id']}}"><button type="button" class="btn btn-success"> تفعيل </button></a></td>
+                    {% endif %}
+                    <td><a href="/admin/student/delete/{{student['id']}}"><button type="button" class="btn btn-danger">حذف</button></a></td>
+
+                </tr>
+                {% endfor %}
+            </div>
+
+        </tbody>
+    </table>
+</div>
