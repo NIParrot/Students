@@ -12,7 +12,7 @@ class membership
         $static = [
             'css_arr' => ['datatablefinal','style4'],
             'header_js_arr' => [],
-            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/examBank','privet/membership']
+            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/membership']
         ];
         $data = [
             'memberships' => \model\memberShip::select(),
@@ -31,9 +31,19 @@ class membership
     public static function PostAdd()
     {
         $validate = [
-            'month'=>'string',
-            'groups_id'=>'int',
-            'students_id'=>'int',
+            'month1'=>'string',
+            'month2'=>'string',
+            'month3'=>'string',
+            'month4'=>'string',
+            'month5'=>'string',
+            'month6'=>'string',
+            'month7'=>'string',
+            'month8'=>'string',
+            'month9'=>'string',
+            'month10'=>'string',
+            'month11'=>'string',
+            'month12'=>'string',
+            'students_id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\memberShip::create($RequestData);

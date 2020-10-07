@@ -107,8 +107,9 @@ class examBank
             'c2'=>'string',
             'c3'=>'string',
             'c4'=>'string',
-            'mark'=>'string',
-            'levels_id'=>'int'
+            'units_id'=>'int',
+            'levels_id'=>'int',
+            'lessons_id'=>'int',
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examsBank::create($RequestData);
@@ -129,8 +130,9 @@ class examBank
             'c2'=>'string',
             'c3'=>'string',
             'c4'=>'string',
-            'mark'=>'string',
+            'units_id'=>'int',
             'levels_id'=>'int',
+            'lessons_id'=>'int',
 
         ];
         $RequestData = \NI_request::validate($validate);

@@ -93,7 +93,8 @@ class examQuestions
         $validate = [
             'exam_id'=>'int',
             'examsBank_id'=>'int',
-            'TimePerMin'=>'int'
+            'TimePerMin'=>'int',
+            'mark'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::create($RequestData);
@@ -108,7 +109,7 @@ class examQuestions
         $validate = [
             'exam_id'=>'int',
             'examsBank_id'=>'int',
-            'TimePerMin'=>'int'
+            'mark'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\examQuestions::update($RequestData);

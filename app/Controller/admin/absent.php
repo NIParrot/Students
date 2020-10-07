@@ -10,14 +10,14 @@ class absent
         // \NI_security::authorized('login',true,'/dashboard/login');
         $path = ['admin','absent','home'];
         $static = [
-            'css_arr' => [],
+            'css_arr' => ['style4','datatablefinal'],
             'header_js_arr' => [],
-            'footer_js_arr' => []
+            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/absent']
         ];
         $data = [
             
         ];
-        \NI_view::TwigComponents(['nav'], null);
+       \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,
@@ -28,8 +28,7 @@ class absent
     public static function PostAdd()
     {
         $validate = [
-            'absent_date'=>'date',
-            'groups_id'=>'int',
+            'forupdate'=>'int',
             'students_id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);

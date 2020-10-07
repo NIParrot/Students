@@ -17,6 +17,7 @@ class admin
         $data = [
             
         ];
+        \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
         $error = [
             'ErrorType' => $_COOKIE['ErrorType']??null,

@@ -32,12 +32,12 @@ class groups
         \NI_security::authorized('role', 'admin', '/admin/login');
         $path = ['admin','groups','add'];
         $static = [
-            'css_arr' => [],
-            'header_js_arr' => [],
-            'footer_js_arr' => []
+            'css_arr' => ['datatablefinal','style4'],
+            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/grouphome'],
+            'header_js_arr' => []
         ];
         $data = [
-            
+            'levels' => \model\levels::select()
         ];
         \NI_view::TwigComponents(['nav'], null);
         \NI_view::Twig($path, $static, $data);
@@ -92,12 +92,12 @@ class groups
     {
         $validate = [
             'name' => 'string' ,
-            'group_data' => 'string' ,
             'levels_id' => 'int' ,
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\groups::create($RequestData);
         if (!empty($dash)) {
+            \NI_redirect::with('/admin/groups', 'primary', 'تم اضافه المجموعه بنجاح');
         } else {
             \NI_redirect::with($_SERVER['REQUEST_URI'], 'danger', 'Error in username or password[×_×]!');
         }

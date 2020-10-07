@@ -1,4 +1,4 @@
-<ul class="nav justify-content-center" style="background-color: silver;">
+<!-- <ul class="nav justify-content-center" style="background-color: silver;">
 
     <li class="nav-item">
         <a class="nav-link" href="/admin/levels">المراحل</a>
@@ -28,4 +28,70 @@
         <a class="nav-link" href="/admin">الرئيسية</a>
     </li>
 
-</ul>
+</ul> -->
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    section {
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .overlay {
+        position: absolute;
+        z-index: 1;
+        background-color: #00000057;
+        min-height: 100vh;
+        top: 0;
+        left: 0;
+    }
+    
+    .new-nav {
+        position: relative !important;
+        color: #FFF !important;
+        background: linear-gradient(180deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 45%) 50%, rgb(0 0 0 / 19%) 100%) !important;
+        z-index: 0;
+    }
+    
+    .new-nav a {
+        color: #FFF !important;
+        font-weight: lighter;
+    }
+    
+    .navbar-brand {
+        font-weight: 300 !important;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg new-nav">
+        <a class="navbar-brand" href="#">الأستاذ معوض</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav float-right text-right">
+                <a class="nav-link active" href="#">بنك الأسألة <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">الإمتحانات</a>
+                <a class="nav-link" href="#">الطلاب</a>
+                <a class="nav-link" href="#">المراحل</a>
+                <a class="nav-link" href="#">المجموعات</a>
+                <a class="nav-link" href="#">الغياب</a>
+                <a class="nav-link" href="#">الشهر</a>
+                <a class="nav-link" href="#">المشرفين</a>
+                <div class="dropdown">
+                    <button style="color: #FFF;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                خيارات
+              </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل</a>
+                        <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تاني</a>
+                        <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تالت</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

@@ -1,30 +1,22 @@
-<div class="container">
-    <div class="logo">
-        <div class="logo-abs">
-            logo
+<div class="overlay-background">
+    <div class="container">
+        <div class="form">
+            <form action="{{form}}" method="POST" autocomplete="off" login-form>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">إسم المستخدم</label>
+                    <input type="text" name="user" class="form-control user-login-input" id="exampleInputEmail1" required aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">كلمة المرور</label>
+                    <input type="password" name="password" required class="form-control user-login-input" id="exampleInputPassword1">
+                </div>
+                <div class="button">
+                    <div class="button-abs">
+                        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="form">
-        <form method="POST" action="{{LoginForm}}" autocomplete="off">
-            <div class="form-group">
-                <div class="alert alert-primary" style="text-align: center;" role="alert">
-                    لوحة تسجيل دخول الطلاب
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="float-right">إسم المستخدم او الهاتف</label>
-                <input type="text" name="user" class="form-control" placeholder="حروف انجليزية فقط او ارقام" id="exampleInputEmail1" aria-describedby="emailHelp" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
-                    required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1" class="float-right">الرقم السري</label>
-                <input type="password" placeholder="ادخل كلمة السر" name="password" class="form-control" id="exampleInputPassword1" required>
-            </div>
-            <div class="button">
-                <div class="button-abs">
-                    <button type="submit" class="btn btn-primary float-right">تسجيل الدخول</button>
-                </div>
-            </div>
-        </form>
     </div>
 </div>

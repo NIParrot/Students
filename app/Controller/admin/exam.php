@@ -120,7 +120,8 @@ class exam
         $validate = [
             'name'=>['string','int'],
             'exam_date' => 'date' ,
-            'TimePerMin' => 'int'
+            'TimePerMin' => 'int',
+            'numberOfQuestion'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\exam::create($RequestData);
@@ -137,7 +138,8 @@ class exam
             'id' => 'int',
             'name'=>['string','int'],
             'exam_date' => 'date' ,
-            'TimePerMin' => 'int'
+            'TimePerMin' => 'int',
+            'numberOfQuestion'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\exam::update($RequestData);

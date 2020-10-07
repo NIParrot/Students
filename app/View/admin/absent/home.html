@@ -1,12 +1,39 @@
-<!DOCTYPE html>
-<html>
+<div class="overlay-background">
+    <div class="col-md-12 text-center mb-3 mt-3">
 
-<head>
-    <title>absent home</title>
-</head>
+        <div class="mr-2 mb-5" style="display: inline-block; background-color: #FFF; border:2px solid #000; border-radius: 1rem; width: 15rem;">
+            <p class="mt-2" style="color: #000; font-weight: bold;">عدد الحاضرين</p>
+            <hr>
+            <span style="color: green; font-size: 30px; font-weight: bold;">20</span>
+        </div>
+        <div class="mr-2" style="display: inline-block; background-color: #FFF; border:2px solid #000; border-radius: 1rem;width: 15rem;">
+            <p class="mt-2" style="color: #000; font-weight: bold;">عدد الغائبين</p>
+            <hr>
+            <span style="color: red; font-size: 30px; font-weight: bold;">20</span>
+        </div>
+    </div>
 
-<body>
-    <div>foobar</div>
-</body>
+    <div class="container">
+        <div style="z-index: 3 !important;">
 
-</html>
+            <table id="myTable" class="display nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>اسم الطالب</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cheque-amt">حازم مسعد</td>
+                        <td style="color: green;">حاضر</td>
+                    </tr>
+                    <tr>
+                        <td class="cheque-amt">الاستاذ معوض</td>
+                        <td style="color: red;">غائب</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

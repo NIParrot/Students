@@ -1,12 +1,21 @@
 body {
   font-family: "Tajawal", "Times New Roman", Times, serif;
   font-weight: bold;
+  background-color: #87bade33;
 }
 body .quation-block {
   margin-top: 2rem;
 }
 body .quation-block .quation {
   text-align: right;
+}
+body .quation-block .quation img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 160px;
+  height: 160px;
+  margin-right: 50vh;
 }
 body .quation-block .answers {
   position: relative;
@@ -16,6 +25,13 @@ body .quation-block .answers .sm-block {
   float: none !important;
   margin-top: 1rem;
   font-weight: lighter;
+}
+body .quation-block .answers .sm-block img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 160px;
+  height: 160px;
 }
 
 /*# sourceMappingURL=style11.css.map */

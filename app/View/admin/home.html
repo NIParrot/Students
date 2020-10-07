@@ -1,48 +1,61 @@
-<div class="container">
-    <div style="margin-bottom: 20%;"></div>
-    <div class="row">
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/levels';">
-                <p id="alinkcard">المراحل</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/groups';">
-                <p id="alinkcard">المجموعات</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/secretary';">
-                <p id="alinkcard">المشرفين</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/student';">
-                <p id="alinkcard">الطلاب</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/examsBank';">
-                <p id="alinkcard">بنك الاسالة</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/exam/home';">
-                <p id="alinkcard">الامتحانات</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/membership';">
-                <p id="alinkcard">الشهر</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="linkcard" onclick="location.href='/admin/absent';">
-                <p id="alinkcard">الغياب</p>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrab.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="fonts/Tajawal-Light.ttf">
+    <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="overlay-background">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">الأستاذ معوض</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav float-right text-right">
+                    <a class="nav-link active" href="/admin/examsBank">بنك الأسألة <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/admin/exam/home">الإمتحانات</a>
+                    <a class="nav-link" href="/admin/student">الطلاب</a>
+                    <a class="nav-link" href="/admin/levels">المراحل</a>
+                    <a class="nav-link" href="/admin/groups">المجموعات</a>
+                    <a class="nav-link" href="/admin/absent">الغياب</a>
+                    <a class="nav-link" href="/admin/membership">الشهر</a>
+                    <a class="nav-link" href="/admin/secretary">المشرفين</a>
+                    <div class="dropdown">
+                        <button style="color: #FFF;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						خيارات
+					</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل</a>
+                            <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تاني</a>
+                            <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تالت</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrab.min.js"></script>
+</body>
 
-
-</div>
+</html>

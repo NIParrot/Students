@@ -1,12 +1,57 @@
-<!DOCTYPE html>
-<html>
+<div class="overlay-background">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">الأستاذ معوض</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav float-right text-right">
+                <a class="nav-link active" href="/admin/examsBank">بنك الأسألة <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/admin/exam/home">الإمتحانات</a>
+                <a class="nav-link" href="/admin/student">الطلاب</a>
+                <a class="nav-link" href="/admin/levels">المراحل</a>
+                <a class="nav-link" href="/admin/groups">المجموعات</a>
+                <a class="nav-link" href="/admin/absent">الغياب</a>
+                <a class="nav-link" href="/admin/membership">الشهر</a>
+                <a class="nav-link" href="/admin/secretary">المشرفين</a>
+                <div class="dropdown">
+                    <button style="color: #FFF;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            خيارات
+                        </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل</a>
+                        <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تاني</a>
+                        <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تالت</a>
+                    </div>
+                </div>
 
-<head>
-    <title>group add</title>
-</head>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 30vh;">
+        <div style="z-index: 3 !important;">
 
-<body>
-    <div>foobar</div>
-</body>
+            <div class=" m-3">
+                <form action="{{form}}" method="POST" autocomplete="off" style="width: 30vw !important; margin-right: 20vw;">
+                    <div class="form-group">
+                        <label style="color: #FFF;" for="formGroupExampleInput">إضافة مجموعة</label>
+                        <input required class="form-control form-control-lg" name="name" type="text" id="formGroupExampleInput" placeholder="إضافة مجموعة">
+                        <label for="exampleFormControlSelect1" class="float-right mt-3">المرحلة</label>
 
-</html>
+                        <select class="form-control" id="exampleFormControlSelect1" name="levels_id">
+                            {% for level in levels %}
+                            
+            
+                                    <option value="{{level['id']}}">{{level['name']}}</option>
+            
+                
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn btn-primary mt-3" style="background-color: #5a646e;">تأكيد</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

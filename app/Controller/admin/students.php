@@ -12,7 +12,7 @@ class students
         $static = [
             'css_arr' => ['datatablefinal','style4'],
             'header_js_arr' => [],
-            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/examBank']
+            'footer_js_arr' => ['datatable','jquery.dataTables.min','dataTables.buttons.min','buttons.flash.min','jszip.min','pdfmake.min','vfs_fonts','buttons.html5.min','buttons.print.min','privet/student']
         ];
         $data = [
 
@@ -63,6 +63,7 @@ class students
             'password'=>'string',
             'phone'=>'string',
             'groups_id'=>'int',
+            'levels_id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\students::create($RequestData);
@@ -108,7 +109,7 @@ class students
             'password'=>'string',
             'phone'=>'string',
             'groups_id'=>'int',
-
+            'levels_id'=>'int'
         ];
         $RequestData = \NI_request::validate($validate);
         $dash = \model\students::update($RequestData);

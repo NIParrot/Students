@@ -1,67 +1,62 @@
-<?php
-namespace model;
-
-class examQuestions
-{
-    public static function create(array $data)
+<?php 
+namespace model; 
+class examQuestions { 
+    public static function create(array $data) 
     {
         $new = \ORM::for_table("examQuestions")->create();
         $new->delete_flag = 0;
         
-        $new->exam_id = $data["exam_id"];
+            $new->exam_id = $data["exam_id"];
             
-        $new->examsBank_id = $data["examsBank_id"];
+            $new->examsBank_id = $data["examsBank_id"];
             
-        $new->TimePerMin = $data["TimePerMin"];
+            $new->TimePerMin = $data["TimePerMin"];
+            
+            $new->mark = $data["mark"];
             
         if ($new->save()) {
             return true;
-        } else {
+        }else{
             return false;
         }
     }
 
-    public static function update(array $data)
+    public static function update(array $data) 
     {
         $update = \ORM::for_table("examQuestions")->find_one([$data["id"]]);
-        if (is_bool($update)) {
-            return false ;
-        }
+        if(is_bool($update)) return false ;
         
         foreach ($data as $key => $value) {
-            if ($key == "id") {
-                continue;
-            }
-            $update->set($key, $value);
+            if ($key == "id") continue;
+            $update->set($key,$value);
         }
-        if ($update->save()) {
+        if($update->save()){
             return true;
-        } else {
+        }else{
             return false;
         }
     }
 
-    public static function select()
+    public static function select() 
     {
         return \ORM::for_table("examQuestions")->findArray();
     }
 
-    public static function find(array $data)
+    public static function find(array $data) 
     {
-        return \ORM::for_table("examQuestions")->find_one([$data["id"]]);
+        return \ORM::for_table("examQuestions")->where('id', $data["id"])->find_array();
     }
     
-    public static function delete(int $id)
-    {
-        $delete = \ORM::for_table("examQuestions")->find_one([$id]);
-        if (is_bool($delete)) {
-            return false ;
-        }
-        $delete->set("delete_flag", 1);
-        if ($delete->save()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+                public static function delete(int $id) 
+                {
+                    $delete = \ORM::for_table("examQuestions")->find_one([$id]);
+                    if(is_bool($delete)) return false ;
+                    $delete->set("delete_flag",1);
+                    if ($delete->save()) {
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
+                
 }

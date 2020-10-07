@@ -1,13 +1,112 @@
 body {
-  font-family: "Tajawal", "Times New Roman", Times, serif;
+    font-family: "Tajawal", "Times New Roman", Times, serif;
+    background-image: url("/app/static/images/inside-system.jpg") !important;
 }
-body nav {
-  margin-bottom: 2rem;
+
+body .overlay-background {
+    background-color: #00000057;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: 2;
 }
-body table {
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-top: 1px solid;
+
+body .overlay-background nav {
+    margin-bottom: 5rem;
+    color: #FFF !important;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.19) 100%) !important;
 }
+
+body .overlay-background nav a {
+    color: #FFF !important;
+    font-weight: lighter !important;
+}
+
+body .overlay-background img {
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+body .overlay-background .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+body .overlay-background .inputfile+label {
+    font-size: 1.25em;
+    color: white;
+    width: 7rem;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #3978b8;
+    display: inline-block;
+    font-weight: lighter;
+}
+
+body .overlay-background .inputfile:focus+label,
+body .overlay-background .inputfile+label:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
+body .overlay-background .inputfile+label {
+    cursor: pointer;
+    /* "hand" cursor */
+}
+
+body .overlay-background .fa-filter {
+    font-family: "tajawal" !important;
+}
+
+body .overlay-background .dataTables_filter {
+    color: #FFF !important;
+}
+
+body .overlay-background .dataTables_filter input {
+    color: #FFF !important;
+}
+
+body .overlay-background .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+body .overlay-background .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+body .overlay-background .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: #FFF !important;
+}
+
+body .overlay-background .dataTables_info {
+    color: #FFF !important;
+}
+
+body .overlay-background .sorting_desc,
+body .overlay-background .sorting {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #000 !important;
+    background-color: #fff;
+}
+
+body .overlay-background .sorting_asc {
+    background-color: #fff;
+    color: #080;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+body .overlay-background .dt-button {
+    background-color: #FFF !important;
+}
+
+body .overlay-background table {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+}
+
 
 /*# sourceMappingURL=style4.css.map */

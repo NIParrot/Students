@@ -1,32 +1,59 @@
-body {
-  font-family: "Tajawal", "Times New Roman", Times, serif;
-  font-weight: bold;
+* {
+    box-sizing: border-box;
 }
-body .logo {
-  position: relative;
-  width: 100%;
+
+* body {
+    font-family: "Tajawal", "Times New Roman", Times, serif;
+    font-weight: bold;
+    background-image: url("/app/static/images/login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-body .logo .logo-abs {
-  margin-left: 50%;
+
+* body .overlay-background {
+    background-color: #00000057;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: 2;
 }
-body .form {
-  min-height: 10em;
-  display: table-cell;
-  vertical-align: middle;
+
+* body .overlay-background .form {
+    min-height: 10em;
+    background-color: #fff;
+    display: table-cell;
+    vertical-align: middle;
 }
-body .form form {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+* body .overlay-background .form form {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #507a869e;
+    border: 1px solid #ddd;
+    border-radius: 4rem;
+    padding: 5rem;
+    color: #FFF;
 }
-body .form form .button {
-  position: relative;
+
+* body .overlay-background .form form .user-login-input {
+    border-radius: 2rem !important;
+    width: 20rem;
 }
-body .form form .button .button-abs {
-  margin-left: 50%;
-  transform: translate(-50%, 50%);
+
+* body .overlay-background .form form .button {
+    position: relative;
 }
+
+* body .overlay-background .form form .button .btn-primary {
+    background-color: #5a646e;
+}
+
+* body .overlay-background .form form .button .button-abs {
+    margin-left: 50%;
+    transform: translate(-50%, 50%);
+}
+
 
 /*# sourceMappingURL=style.css.map */
