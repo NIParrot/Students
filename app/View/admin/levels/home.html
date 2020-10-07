@@ -1,27 +1,66 @@
-<div class="col-md-12 text-center mb-3 mt-3">
-    <a href="/admin/levels/add"><button class="btn btn-primary"> إضافة</button></a>
+<div class="overlay-background">
+
 </div>
 
-<div class="container">
-    <table id="myTable" class="display nowrap text-right" style="width:100%">
-        <thead>
-            <tr>
-                <th>المرحلة</th>
-                <th>تعديل</th>
-                <th>حذف</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for level in levels %}
-            <div>
-                <tr>
-                    <td>{{level['name']}}</td>
-                    <td><a href="/admin/levels/edit/{{level['id']}}"><button type="button" class="btn btn-success">تعديل</button></a></td>
-                    <td><a href="/admin/levels/delete/{{level['id']}}"><button type="button" class="btn btn-danger">حذف</button></a></td>
-                </tr>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="container mb-3 mt-3">
+                <div class="alert alert-danger mt-3" role="alert">
+                    <p>هل انت متأكد من حذف هذه المجموعة؟</p>
+                </div>
+                <div>
+                    <button type="button" id='target2' class="btn btn-danger ml-1">نعم</button>
+                    <button type="button" id="target3" class="btn btn-light">لا</button>
+                </div>
             </div>
-
-            {% endfor %}
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="container mb-3 mt-3">
+                <form action="{{form}}" method="POST" autocomplete="off">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">إضافة صف</label>
+                        <input required class="form-control form-control-lg" name="level" type="text" id="formGroupExampleInput" placeholder="إضافة صف">
+                        <button type="submit" class="btn btn-primary mt-3">تأكيد</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="col-md-12 text-center mb-3 mt-3">
+        <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal3"> إضافة</button>
+    </div>
+    <div class="container">
+        <div class="the-container">
+
+            <table id="myTable" class="display nowrap">
+                <thead>
+                    <tr>
+                        <th>الصف</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for level in levels %}
+                    <div>
+                        <tr>
+                            <td class="cheque-amt">{{level['name']}}</td>
+                            <td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">
+									حذف
+								</button></td>
+                        </tr>
+                    </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</footer>

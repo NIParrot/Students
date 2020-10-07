@@ -4,30 +4,27 @@ body {
     background-image: url("/app/static/images/inside-system.jpg");
 }
 
-body .overlay-background {
-    background-color: #00000057;
-    min-width: 100vw;
-    min-height: 100vh;
-    z-index: 1;
-}
-
-body .overlay-background nav {
+body nav {
     margin-bottom: 5rem;
     color: #FFF !important;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.19) 100%) !important;
 }
 
-body .overlay-background nav a {
+body nav a {
     color: #FFF !important;
     font-weight: lighter !important;
 }
 
-body .overlay-background .container {
+body .the-container {
+    z-index: 3 !important;
+}
+
+body .container {
     display: flex;
     flex-wrap: wrap;
 }
 
-body .overlay-background .container div {
+body .container div {
     width: 23%;
     margin-top: 1rem;
     margin-left: 1%;
@@ -37,6 +34,7 @@ body .overlay-background .container div {
     border-radius: 4rem;
     padding: 5rem;
     color: #FFF;
+    cursor: pointer;
 }
 
 

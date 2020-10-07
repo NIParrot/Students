@@ -1,0 +1,125 @@
+body {
+    font-family: 'Tajawal', 'Times New Roman', Times, serif;
+    background-image: url("/images/inside-system.jpg") !important;
+
+    section {
+        position: relative;
+        min-height: 100vh;
+
+        .overlay-background {
+            position: absolute;
+            z-index: 1;
+            background-color: #00000057;
+            min-height: 100vh;
+            top: 0;
+            left: 0;
+        }
+
+        .the-container {
+            z-index: 3 !important;
+
+            .display {
+                width: 100%
+            }
+
+            .attend {
+                color: #2ae72a;
+                font-weight: bold;
+            }
+
+            .absent {
+                color: red;
+                font-weight: bold;
+            }
+
+            img {
+                display: inline-block;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 50px;
+                height: 50px;
+
+            }
+
+            .inputfile {
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+
+            .inputfile+label {
+                font-size: 1.25em;
+                color: white;
+                width: 7rem;
+                text-align: center;
+                border-radius: 2px;
+                border: 1px solid #3978b8;
+                display: inline-block;
+                font-weight: lighter;
+            }
+
+            .inputfile:focus+label,
+            .inputfile+label:hover {
+                background-color: #FFF;
+                color: #000;
+            }
+
+            .inputfile+label {
+                cursor: pointer;
+                /* "hand" cursor */
+            }
+
+            .fa-filter {
+                font-family: "tajawal" !important;
+            }
+
+            .dataTables_filter {
+                color: #FFF !important;
+            }
+
+            .dataTables_filter input {
+                color: #FFF !important;
+
+            }
+
+            .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+            .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+            .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+                color: #FFF !important;
+            }
+
+            .dataTables_info {
+                color: #FFF !important;
+            }
+
+            .sorting_desc,
+            .sorting {
+                border-top: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                color: #000 !important;
+                background-color: #fff;
+            }
+
+            .sorting_asc {
+                background-color: #fff;
+                color: #080;
+                border-top: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .dt-button {
+                background-color: #FFF !important;
+            }
+
+            table {
+                border-left: 1px solid;
+                border-right: 1px solid;
+                border-top: 1px solid;
+            }
+        }
+    }
+}

@@ -1,61 +1,63 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrab.min.css">
-    <link rel="stylesheet" href="css/style2.css">
-    <link rel="stylesheet" href="fonts/Tajawal-Light.ttf">
-    <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf">
-    <title>Document</title>
+<style>
+    section {
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .overlay {
+        position: absolute;
+        z-index: 1;
+        background-color: #00000057;
+        min-height: 100vh;
+        top: 0;
+        left: 0;
+    }
+    
+    .new-nav {
+        position: relative !important;
+        color: #FFF !important;
+        background: linear-gradient(180deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 45%) 50%, rgb(0 0 0 / 19%) 100%) !important;
+        z-index: 0;
+    }
+    
+    .new-nav a {
+        color: #FFF !important;
+        font-weight: lighter;
+    }
+    
+    .navbar-brand {
+        font-weight: 300 !important;
+    }
+    
+    .dropdown-item {
+        color: #000 !important;
+    }
+    
+    .dropdown-toggle {
+        color: #fff;
+    }
+    
+    .container {
+        margin-top: 20vh;
+    }
+</style>
 </head>
 
 <body>
-    <div class="overlay-background">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">الأستاذ معوض</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav float-right text-right">
-                    <a class="nav-link active" href="/admin/examsBank">بنك الأسألة <span class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="/admin/exam/home">الإمتحانات</a>
-                    <a class="nav-link" href="/admin/student">الطلاب</a>
-                    <a class="nav-link" href="/admin/levels">المراحل</a>
-                    <a class="nav-link" href="/admin/groups">المجموعات</a>
-                    <a class="nav-link" href="/admin/absent">الغياب</a>
-                    <a class="nav-link" href="/admin/membership">الشهر</a>
-                    <a class="nav-link" href="/admin/secretary">المشرفين</a>
-                    <div class="dropdown">
-                        <button style="color: #FFF;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						خيارات
-					</button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل</a>
-                            <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تاني</a>
-                            <a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل تالت</a>
-                        </div>
-                    </div>
+    <section>
+        <div class="overlay-background"> </div>
 
-                </div>
-            </div>
-        </nav>
+
         <div class="container">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div onclick="location.href='/admin/examsBank'">بنك الأسألة</div>
+            <div onclick="location.href='/admin/levels'">المراحل</div>
+            <div onclick="location.href='/admin/absent'">الغياب</div>
+            <div onclick="location.href='/admin/student'">الطلاب الجدد</div>
+            <div onclick="location.href='/admin/membership'">الشهر</div>
+            <div onclick="location.href='/admin/groups'">المجموعات</div>
+            <div onclick="location.href='/admin/exam/home'">الامتحانات</div>
+            <div onclick="location.href='/admin/secretary'">المشرفين</div>
         </div>
-    </div>
-    <script src="js/jQuery.js"></script>
-    <script src="js/bootstrab.min.js"></script>
-</body>
 
-</html>
+    </section>

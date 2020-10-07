@@ -1,4 +1,4 @@
-<div class="col-md-12 text-center mb-3 mt-3">
+<!-- <div class="col-md-12 text-center mb-3 mt-3">
     <a href="/admin/examsBank/add"><button class="btn btn-primary"> إضافة</button></a>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -36,9 +36,6 @@
                 <td> {{exam['c1']}}</td>
                 <td>{{exam['mark']}}</td>
                 <td>{{levels[exam['levels_id']-1]['name']}}</td>
-                <!-- <td><button type="button" class="btn btn-success">
-							تعديل
-                        </button></td> -->
                 <td><a href="/admin/examsBank/edit/{{exam['id']}}"><button type="button" class="btn btn-success">تعديل</button></a></td>
                 <td><a href="/admin/examsBank/delete/{{exam['id']}}"><button type="button" class="btn btn-danger">حذف</button></a></td>
 
@@ -47,4 +44,101 @@
 
         </tbody>
     </table>
-</div>
+</div> -->
+
+
+<div class="overlay-background"></div>
+
+<section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="container mb-3 mt-3">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <p>هل انت متأكد من حذف هذا السؤال؟</p>
+                    </div>
+                    <div>
+                        <button type="button" id='target2' class="btn btn-danger ml-1">نعم</button>
+                        <button type="button" id="target3" class="btn btn-light">لا</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="container mb-3 mt-3">
+                    <form action="{{form}}" method="POST" autocomplete="off" class="mt-3 mb-3">
+                        <div class="form-group">
+                            <label style="color: #000;" for="formGroupExampleInput">تعديل السؤال</label>
+                            <input type="text" name="quation" class="form-control input-sm cheque-amt toedt" Placeholder="Enter Cheque Amount" onkeypress="return isNumber(event)">
+                            <label style="color: #000;" for="formGroupExampleInput">تعديل الإجابة الصحيحة</label>
+                            <input type="text" name="answer" class="form-control input-sm cheque-amt2 toedt2" Placeholder="Enter Cheque Amount" onkeypress="return isNumber(event)">
+                            <div class="form-group input-sm cheque-amt4" style="width: 30vw;">
+                                <label for="exampleFormControlSelect1" class="mt-3" style="color:#000">المرحلة</label>
+                                <select class="form-control toedt3" id="exampleFormControlSelect1" name="level">
+											<option>المرحلة الأولي</option>
+											<option>المرحلة الثانية</option>
+											<option>المرحلة الثالثة</option>
+											<option>المرحلة الرابعة</option>
+											<option>المرحلة الخامسة</option>
+											<option>المرحلة السادسة</option>
+										</select>
+                            </div>
+                            <div>
+                                <button id="target4" type="button" class="btn btn-primary mt-3">تأكيد</button>
+                                <button id="target5" type="button" class="btn mt-3">عودة</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+
+        <div class="container">
+            <div class="the-container">
+
+                <table id="myTable" class="display data-table">
+                    <thead>
+                        <tr>
+                            <th>السؤال</th>
+                            <th>الإجابة الصحيحة</th>
+                            <th>المرحلة</th>
+                            <th>تعديل</th>
+                            <th>حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cheque-amt">السؤال الأول</td>
+                            <td class="cheque-amt2">الإجابة الصحيحة للسؤال الأول</td>
+                            <td class="cheque-amt3">الأول</td>
+                            <td><button type="button" class="btn btn-success btnedit" data-toggle="modal" data-target="#exampleModal2">
+									تعديل
+								</button></td>
+                            <td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">
+									حذف
+								</button></td>
+                        </tr>
+                        <tr>
+                            <td class="cheque-amt">السؤال الثاني</td>
+                            <td class="cheque-amt2">الإجابة الصحيحة للسؤال القاني</td>
+                            <td class="cheque-amt3">الثالث</td>
+                            <td><button type="button" class="btn btn-success btnedit" data-toggle="modal" data-target="#exampleModal2">
+									تعديل
+								</button></td>
+                            <td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">
+									حذف
+								</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>

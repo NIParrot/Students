@@ -1,0 +1,39 @@
+body {
+  font-family: "Tajawal", "Times New Roman", Times, serif;
+  font-weight: bold;
+  background-color: #87bade33;
+
+  .quation-block {
+    margin-top: 2rem;
+
+    .quation {
+      text-align: right;
+      img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 160px;
+        height: 160px;
+        margin-right: 50vh;
+      }
+    }
+
+    .answers {
+      position: relative;
+        .sm-block {
+          display: block;
+          float: none !important;
+          margin-top: 1rem;
+          // text-align: right;
+          font-weight: lighter;
+          img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 160px;
+            height: 160px;
+          }
+        }
+      }
+    }
+  }
